@@ -52,8 +52,8 @@ document.querySelectorAll('section, .skill-card, .project-card, .glass').forEach
 const typingText = document.getElementById('typing-text');
 const roles = [
   "Python Full Stack Developer",
-  "Backend Architecture Specialist",
-  "Professional Trainer & Mentor"
+  "Backend Developer ",
+  "Trainer & Mentor"
 ];
 
 let roleIndex = 0;
