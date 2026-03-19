@@ -92,6 +92,31 @@ if (typingText) {
   setTimeout(() => type(), 1000);
 }
 
+// Stats Count Up Animation
+const stats = document.querySelectorAll('.stat-number');
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const target = entry.target;
+      const countTo = parseInt(target.innerText.replace('+', ''));
+      let current = 0;
+      const increment = countTo / 50;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= countTo) {
+          target.innerText = countTo + '+';
+          clearInterval(timer);
+        } else {
+          target.innerText = Math.floor(current) + '+';
+        }
+      }, 30);
+      statsObserver.unobserve(target);
+    }
+  });
+}, { threshold: 0.5 });
+
+stats.forEach(stat => statsObserver.observe(stat));
+
 // Form Submission (Simulated)
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
