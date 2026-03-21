@@ -1,4 +1,4 @@
-import './style.css'
+// CSS is now linked directly in index.html for compatibility with static hosting like GitHub Pages
 
 // Navbar Scroll Effect
 const navbar = document.getElementById('navbar');
