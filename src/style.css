@@ -349,11 +349,6 @@ nav .container {
   transform: scale(1.05);
 }
 
-#img-ecommerce { background-image: url('/assets/ecommerce.png'); }
-#img-blog { background-image: url('/assets/blog.png'); }
-#img-task { background-image: url('/assets/tasks.png'); }
-#img-featured { background-image: url('/assets/hostel.png'); background-size: cover; background-position: center; }
-
 .project-preview {
   background-size: cover;
   background-position: center;
