@@ -33,7 +33,11 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
 }
-
+#img-bloodbank {
+  background-image: url('/assets/bloodbank.png');
+  background-size: cover;
+  background-position: center;
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Outfit', sans-serif;
   letter-spacing: -0.02em;

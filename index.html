@@ -109,27 +109,45 @@
     <section id="featured">
       <div class="container">
         <h2 class="section-title">Featured Project</h2>
+
         <div class="glass" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding: 3rem; align-items: center;">
+          
+          <!-- Project Image -->
           <div class="project-preview" id="img-featured" style="background: #1a1a1e; border-radius: 12px; aspect-ratio: 4/3; position: relative; overflow: hidden;">
-            <!-- Placeholder for project image -->
-            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--text-secondary)">
-              <i data-lucide="monitor" style="width: 100px; height: 100px; opacity: 0.1"></i>
-            </div>
+            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" 
+                alt="Laundry Shop Project" 
+                style="width: 100%; height: 100%; object-fit: cover;">
           </div>
+
+          <!-- Project Details -->
           <div>
-            <span style="color: var(--accent-primary); font-weight: 600; font-size: 0.9rem;">Web Application</span>
-            <h3 style="font-size: 2rem; margin: 1rem 0;">Hostel Management System</h3>
+            <span style="color: var(--accent-primary); font-weight: 600; font-size: 0.9rem;">
+              Web Application
+            </span>
+
+            <h3 style="font-size: 2rem; margin: 1rem 0;">
+              Laundry Shop Management System
+            </h3>
+
             <p style="color: var(--text-secondary); margin-bottom: 2rem;">
-              A comprehensive system designed to streamline hostel operations. Features include student management, attendance tracking, mess charge calculation, and a built-in complaint system. Built with Python and Django for a secure and scalable backend.
+              A web-based laundry management system that allows users to place laundry orders, track status, and manage services efficiently. 
+              Includes admin panel for order management, pricing, and customer tracking. Built using Django for a secure and scalable backend.
             </p>
+
+            <!-- Tech Stack -->
             <div class="project-tags" style="margin-bottom: 2rem;">
               <span class="tag">Django</span>
-              <span class="tag">PostgreSQL</span>
+              <span class="tag">SQLite</span>
               <span class="tag">REST API</span>
-              <span class="tag">JavaScript</span>
+              <span class="tag">HTML/CSS</span>
             </div>
-            <a href="#" class="btn btn-primary">View Project <i data-lucide="external-link"></i></a>
+
+            <!-- Live Link -->
+            <a href="https://laundry-shop-django-9.onrender.com" target="_blank" class="btn btn-primary">
+              View Live Project <i data-lucide="external-link"></i>
+            </a>
           </div>
+
         </div>
       </div>
     </section>
@@ -137,7 +155,7 @@
     <!-- Experience / Training -->
     <section id="experience">
       <div class="container">
-        <h2 class="section-title">Experience & Training</h2>
+        <h2 class="section-title">Experience</h2>
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-dot"></div>
@@ -172,28 +190,56 @@
           <div class="project-card glass">
             <div class="project-img" id="img-ecommerce"></div>
             <div class="project-info">
-              <h3>E-commerce API System</h3>
-              <p>A high-performance RESTful API for modern e-commerce. Features JWT auth, Redis caching, and Stripe integration.</p>
+              <h3>Event Booking API System</h3>
+              <p>
+              A scalable Event Booking REST API built with FastAPI. Features include user authentication, event management, booking system, and optimized performance using Redis caching.
+              </p>
               <div class="project-tags">
                 <span class="tag">FastAPI</span>
                 <span class="tag">Redis</span>
                 <span class="tag">PostgreSQL</span>
               </div>
-              <a href="#" style="color: var(--accent-primary); text-decoration: none; font-weight: 600;">Explore <i data-lucide="chevron-right" style="vertical-align: middle"></i></a>
+              <a href="https://github.com/arathyrajeesh/event-booking-api" target="_blank"
+              style="color: var(--accent-primary); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 6px;">
+              <i data-lucide="github"></i>
+              View Code
+              </a>
             </div>
           </div>
           <div class="project-card glass">
-            <div class="project-img" id="img-blog"></div>
-            <div class="project-info">
-              <h3>DevStream Blog Engine</h3>
-              <p>A full-stack blog platform with markdown support, dynamic categorization, and automated SEO meta-tag generation.</p>
-              <div class="project-tags">
-                <span class="tag">Django</span>
-                <span class="tag">React</span>
-                <span class="tag">Tailwind</span>
+            <div class="project-img" id="img-bloodbank"></div>
+  
+              <div class="project-info">
+                <h3>Blood Bank Management System</h3>
+    
+                <p>
+                  A full-featured web application for managing blood donors, requests, and inventory. Includes admin dashboard, donor registration, and real-time blood availability tracking.
+                </p>
+
+                <div class="project-tags">
+                  <span class="tag">Django</span>
+                  <span class="tag">SQLite</span>
+                  <span class="tag">Bootstrap</span>
+                  <span class="tag">Render</span>
+                </div>
+
+                <!-- Buttons -->
+                <div style="display: flex; gap: 12px; margin-top: 10px;">
+      
+                  <a href="https://blood-bank-management-django-12.onrender.com/" 
+                    target="_blank" 
+                    class="btn btn-primary">
+                    Live Project <i data-lucide="external-link"></i>
+                  </a>
+
+                  <a href="https://github.com/arathyrajeesh/blood-bank-management-django" 
+                    target="_blank"
+                    class="btn btn-secondary">
+                    <i data-lucide="github"></i> Code
+                  </a>
+
+                </div>
               </div>
-              <a href="#" style="color: var(--accent-primary); text-decoration: none; font-weight: 600;">Explore <i data-lucide="chevron-right" style="vertical-align: middle"></i></a>
-            </div>
           </div>
           <div class="project-card glass">
             <div class="project-img" id="img-task"></div>
@@ -224,7 +270,7 @@
                 <i data-lucide="mail"></i>
                 <span>arathyrajeesh2@gmail.com</span>
               </a>
-              <a href="www.linkedin.com/in/arathyrajeesh" class="contact-item glass">
+              <a href="https://www.linkedin.com/in/arathyrajeesh" target="_blank" class="contact-item glass">
                 <i data-lucide="linkedin"></i>
                 <span>LinkedIn Profile</span>
               </a>
