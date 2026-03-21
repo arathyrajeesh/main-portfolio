@@ -151,23 +151,27 @@ if (contactForm) {
       });
 
       if (response.ok) {
-        btn.innerHTML = "Message Sent";
+        btn.innerHTML = 'Message Sent! <i data-lucide="check"></i>';
         btn.style.background = "#22c55e";
+        if (typeof lucide !== 'undefined') lucide.createIcons();
         contactForm.reset();
       } else {
-        btn.innerHTML = "Error";
+        btn.innerHTML = 'Error! <i data-lucide="alert-circle"></i>';
         btn.style.background = "#ef4444";
+        if (typeof lucide !== 'undefined') lucide.createIcons();
       }
     } catch (error) {
-      btn.innerHTML = "Failed";
+      btn.innerHTML = 'Failed <i data-lucide="x-circle"></i>';
       btn.style.background = "#ef4444";
+      if (typeof lucide !== 'undefined') lucide.createIcons();
     }
 
     setTimeout(() => {
       btn.innerHTML = originalText;
       btn.style.background = "";
       btn.disabled = false;
-    }, 3000);
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    }, 4000);
   });
 }
 
