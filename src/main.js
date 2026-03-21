@@ -130,10 +130,44 @@ stats.forEach(stat => statsObserver.observe(stat));
 const contactForm = document.querySelector('.contact-form');
 
 if (contactForm) {
-  contactForm.addEventListener('submit', () => {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault(); // stop redirect
+
     const btn = contactForm.querySelector('button');
-    btn.innerHTML = 'Sending...';
+    const originalText = btn.innerHTML;
+
+    btn.innerHTML = "Sending...";
     btn.disabled = true;
+
+    const formData = new FormData(contactForm);
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        btn.innerHTML = "Message Sent";
+        btn.style.background = "#22c55e";
+        contactForm.reset();
+      } else {
+        btn.innerHTML = "Error";
+        btn.style.background = "#ef4444";
+      }
+    } catch (error) {
+      btn.innerHTML = "Failed";
+      btn.style.background = "#ef4444";
+    }
+
+    setTimeout(() => {
+      btn.innerHTML = originalText;
+      btn.style.background = "";
+      btn.disabled = false;
+    }, 3000);
   });
 }
 
