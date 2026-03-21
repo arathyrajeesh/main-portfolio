@@ -56,6 +56,20 @@
               <i data-lucide="download"></i> Resume
             </a>
           </div>
+          <div class="hero-stats reveal-stagger">
+            <div class="stat-item">
+              <span class="stat-number">5+</span>
+              <span class="stat-label">Years of Code</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">20+</span>
+              <span class="stat-label">Projects Built</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Students Mentored</span>
+            </div>
+          </div>
         </div>
       </div>
     </header>
@@ -64,11 +78,11 @@
     <section id="about">
       <div class="container">
         <h2 class="section-title">About Me</h2>
-        <div class="glass" style="padding: 3rem; max-width: 900px; margin: 0 auto;">
-          <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+        <div class="glass about-box">
+          <p class="text-lead">
             I am a Python Full Stack Developer based in Kerala, India. My journey into the world of programming started with a fascination for how complex systems work behind the scenes. Today, I specialize in building robust backend architectures and intuitive user interfaces.
           </p>
-          <p style="font-size: 1.1rem; color: var(--text-secondary);">
+          <p class="text-lead" style="margin-bottom: 0;">
             Beyond development, I am deeply committed to education. As a trainer, I've had the privilege of guiding hundreds of students through the intricacies of Python, web development, and real-world project building. I believe that teaching is the best way to master a craft.
           </p>
         </div>
@@ -134,26 +148,26 @@
           <div class="project-preview" id="img-featured">
             <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" 
                 alt="Laundry Shop Project" 
-                style="width: 100%; height: 100%; object-fit: cover;">
+                class="img-responsive">
           </div>
 
           <!-- Project Details -->
           <div>
-            <span style="color: var(--accent-primary); font-weight: 600; font-size: 0.9rem;">
+            <span class="featured-meta">
               Web Application
             </span>
 
-            <h3 style="font-size: 2rem; margin: 1rem 0;">
+            <h3 class="featured-title">
               Laundry Shop Management System
             </h3>
 
-            <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+            <p class="featured-desc">
               A web-based laundry management system that allows users to place laundry orders, track status, and manage services efficiently. 
               Includes admin panel for order management, pricing, and customer tracking. Built using Django for a secure and scalable backend.
             </p>
 
             <!-- Tech Stack -->
-            <div class="project-tags" style="margin-bottom: 2rem;">
+            <div class="project-tags project-tags-margin">
               <span class="tag">Django</span>
               <span class="tag">SQLite</span>
               <span class="tag">REST API</span>
@@ -161,35 +175,37 @@
             </div>
 
             <!-- Live Link -->
-            <a href="https://laundry-shop-django-9.onrender.com" target="_blank" class="btn btn-primary">
-              View Live Project <i data-lucide="external-link"></i>
-            </a>
-            <a href="https://github.com/arathyrajeesh/laundry-shop-django" target="_blank" class="btn btn-secondary">
-              View Code <i data-lucide="github"></i>
-            </a>
+            <div class="project-links">
+              <a href="https://laundry-shop-django-9.onrender.com" target="_blank" class="btn btn-primary">
+                View Live Project <i data-lucide="external-link"></i>
+              </a>
+              <a href="https://github.com/arathyrajeesh/laundry-shop-django" target="_blank" class="btn btn-secondary">
+                View Code <i data-lucide="github"></i>
+              </a>
+            </div>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- Experience / Training -->
+    <!-- Experience -->
     <section id="experience">
       <div class="container">
-        <h2 class="section-title">Experience</h2>
+        <h2 class="section-title">Professional Journey</h2>
         <div class="timeline">
-          <div class="timeline-item">
+          <div class="timeline-item reveal">
             <div class="timeline-dot"></div>
-            <div class="timeline-content glass" style="padding: 2rem;">
+            <div class="timeline-content glass timeline-card">
               <span class="timeline-date">Present</span>
               <h3>Python Full Stack Developer cum Trainer</h3>
-              <p>Specializing in Python backend development and mentoring aspiring developers. Conducting intensive bootcamps on Django,and REST architecture.</p>
+              <p>Specializing in Python backend development and mentoring aspiring developers. Conducting intensive bootcamps on Django, and REST architecture.</p>
             </div>
           </div>
-          <div class="timeline-item">
+          <div class="timeline-item reveal">
             <div class="timeline-dot"></div>
-              <div class="timeline-content glass" style="padding: 2rem;">
-                <span class="timeline-date">Past</span>
+              <div class="timeline-content glass timeline-card">
+                <span class="timeline-date">2023 - 2024</span>
                 <h3>Python Full-Stack Developer (Internship)</h3>
                 <p>
                   Successfully delivered multiple web applications for international clients, focusing on E-commerce systems and custom API integrations.
@@ -203,13 +219,58 @@
       </div>
     </section>
 
+    <!-- Mentoring & Training Section -->
+    <section id="mentoring" class="reveal">
+      <div class="container">
+        <h2 class="section-title">Mentoring & Training</h2>
+        <div class="training-grid">
+          <div class="training-card glass">
+            <div class="icon-box">
+              <i data-lucide="graduation-cap"></i>
+            </div>
+            <h3>Python Full Stack</h3>
+            <p>Comprehensive training on Python, Django, and modern web technologies.</p>
+            <ul class="training-list">
+              <li>Backend Mastery with Django</li>
+              <li>REST API Architecture</li>
+              <li>Frontend Integration</li>
+            </ul>
+          </div>
+          <div class="training-card glass">
+            <div class="icon-box">
+              <i data-lucide="users"></i>
+            </div>
+            <h3>Corporate Training</h3>
+            <p>Tailored workshops for teams looking to upscale their Python capabilities.</p>
+            <ul class="training-list">
+              <li>FastAPI Microservices</li>
+              <li>Database Optimization</li>
+              <li>Code Review Best Practices</li>
+            </ul>
+          </div>
+          <div class="training-card glass">
+            <div class="icon-box">
+              <i data-lucide="message-circle"></i>
+            </div>
+            <h3>1-on-1 Mentorship</h3>
+            <p>Personalized guidance for career transitions and technical interview prep.</p>
+            <ul class="training-list">
+              <li>Portfolio Development</li>
+              <li>Interview Preparation</li>
+              <li>Career Roadmap Planning</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Projects Grid -->
     <section id="projects">
       <div class="container">
         <h2 class="section-title">More Projects</h2>
         <div class="projects-grid">
-          <div class="project-card glass">
-            <div class="project-img" id="img-ecommerce" style="background: url('https://media.istockphoto.com/id/1300657889/photo/calendar-on-solid-blue-background-with-copy-space-business-meeting-schedule-travel-planning.webp?a=1&b=1&s=612x612&w=0&k=20&c=XURD9o67od6Ljc9l7ZNCKkSyxFNfjSXuTd8tKT-mo6g=') center/cover no-repeat;"></div>
+          <div class="project-card glass reveal">
+            <div class="project-img" id="img-ecommerce" style="background-image: url('https://media.istockphoto.com/id/1300657889/photo/calendar-on-solid-blue-background-with-copy-space-business-meeting-schedule-travel-planning.webp?a=1&b=1&s=612x612&w=0&k=20&c=XURD9o67od6Ljc9l7ZNCKkSyxFNfjSXuTd8tKT-mo6g=')"></div>
             <div class="project-info">
               <h3>Event Booking API System</h3>
               <p>
@@ -220,17 +281,14 @@
                 <span class="tag">Redis</span>
                 <span class="tag">PostgreSQL</span>
               </div>
-              <a href="https://github.com/arathyrajeesh/event-booking-api" target="_blank"
-              style="color: var(--accent-primary); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 6px;">
-              <i data-lucide="github"></i>
-              View Code
+              <a href="https://github.com/arathyrajeesh/event-booking-api" target="_blank" class="link-accent">
+                <i data-lucide="github"></i>
+                View Code
               </a>
             </div>
           </div>
-          <div class="project-card glass">
-            <div class="project-img" id="img-bloodbank" 
-                style="background: url('https://media.istockphoto.com/id/1266746911/photo/patient-lying-at-hospital.webp?a=1&b=1&s=612x612&w=0&k=20&c=UjqFcSA73JLPgrTF8HiJcMNM8X15QwoltUi1GVKNgWg=') center/cover no-repeat; border-radius: 12px;">
-            </div>
+          <div class="project-card glass reveal">
+            <div class="project-img" id="img-bloodbank"></div>
   
               <div class="project-info">
                 <h3>Blood Bank Management System</h3>
@@ -247,31 +305,22 @@
                 </div>
 
                 <!-- Buttons -->
-                <div style="display: flex; gap: 12px; margin-top: 10px;">
-                  <a href="https://blood-bank-management-django-12.onrender.com/" 
-                    target="_blank"
-                    style="color: var(--accent-primary); text-decoration: none; font-weight: 600;">
-                    
-                    View Live <i data-lucide="external-link" style="vertical-align: middle"></i>
+                <div class="project-links">
+                  <a href="https://blood-bank-management-django-12.onrender.com/" target="_blank" class="link-accent">
+                    View Live <i data-lucide="external-link"></i>
                   </a>
-                  <a href="https://github.com/arathyrajeesh/blood-bank-management-django" 
-                    target="_blank"
-                    style="color: var(--accent-primary); text-decoration: none; font-weight: 600;">
-                    
-                    Code <i data-lucide="github" style="vertical-align: middle"></i>
+                  <a href="https://github.com/arathyrajeesh/blood-bank-management-django" target="_blank" class="link-accent">
+                    Code <i data-lucide="github"></i>
                   </a>
                 </div>
               </div>
           </div>
-          <div class="project-card glass">
-  
+          <div class="project-card glass reveal">
             <!-- Project Image -->
-            <div class="project-img" id="img-task" style="background: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d') center/cover no-repeat; border-radius: 12px;"></div>
+            <div class="project-img" id="img-task" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d')"></div>
             
             <div class="project-info">
-              
               <h3>Local Service Booking System</h3>
-              
               <p>
                 A web platform that connects users with local service providers like electricians, plumbers, and home services. 
                 Users can book services, track requests, and manage appointments, while admins handle service listings and requests efficiently.
@@ -286,13 +335,11 @@
               </div>
 
               <!-- Live Link -->
-              <a href="https://localservice-port-1.onrender.com/" 
-                target="_blank"
-                style="color: var(--accent-primary); text-decoration: none; font-weight: 600;">
-                
-                View Live <i data-lucide="external-link" style="vertical-align: middle"></i>
-              </a>
-
+              <div class="project-links">
+                <a href="https://localservice-port-1.onrender.com/" target="_blank" class="link-accent">
+                  View Live <i data-lucide="external-link"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -305,7 +352,7 @@
         <h2 class="section-title">Get In Touch</h2>
         <div class="contact-container">
           <div class="contact-info">
-            <p style="color: var(--text-secondary); margin-bottom: 2rem;">I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+            <p class="contact-lead">I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
             <div class="contact-methods">
               <a href="mailto:arathyrajeesh2@gmail.com" class="contact-item glass">
                 <i data-lucide="mail"></i>
@@ -315,7 +362,7 @@
                 <i data-lucide="linkedin"></i>
                 <span>LinkedIn Profile</span>
               </a>
-              <a href="https://github.com/arathyrajeesh" class="contact-item glass">
+              <a href="https://github.com/arathyrajeesh" target="_blank" class="contact-item glass">
                 <i data-lucide="github"></i>
                 <span>GitHub Profile</span>
               </a>
@@ -325,38 +372,49 @@
               </div>
             </div>
           </div>
-          <form class="contact-form glass" style="padding: 2.5rem;">
+          <form action="https://formspree.io/f/xqeyjvrb" method="POST" class="contact-form glass form-padding">
+  
             <div class="form-group">
-              <input type="text" placeholder="Your Name" required />
+              <input type="text" name="name" placeholder="Your Name" required />
             </div>
+
             <div class="form-group">
-              <input type="email" placeholder="Your Email" required />
+              <input type="email" name="email" placeholder="Your Email" required />
             </div>
+
             <div class="form-group">
-              <textarea placeholder="Your Message" rows="5" required></textarea>
+              <input type="text" name="subject" placeholder="Subject" />
             </div>
-            <button type="submit" class="btn btn-primary">Send Message <i data-lucide="send"></i></button>
+
+            <div class="form-group">
+              <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              Send Message <i data-lucide="send"></i>
+            </button>
+
           </form>
         </div>
       </div>
     </section>
 
-    <footer style="padding: 6rem 0 3rem; background: var(--bg-darker);">
+    <footer class="footer-main">
       <div class="container">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; flex-wrap: wrap; gap: 2rem;">
+        <div class="footer-top">
           <a href="#" class="logo">ARATHY.TP</a>
-          <div class="social-links" style="display: flex; gap: 1.5rem;">
-            <a href="https://github.com/arathyrajeesh" class="glass" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: var(--accent-primary); text-decoration: none; transition: var(--transition-smooth);"><i data-lucide="github"></i></a>
-            <a href="https://www.linkedin.com/in/arathyrajeesh" class="glass" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: var(--accent-primary); text-decoration: none; transition: var(--transition-smooth);"><i data-lucide="linkedin"></i></a>
-            <a href="#" class="glass" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: var(--accent-primary); text-decoration: none; transition: var(--transition-smooth);"><i data-lucide="twitter"></i></a>
-            <a href="#" class="glass" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: var(--accent-primary); text-decoration: none; transition: var(--transition-smooth);"><i data-lucide="mail"></i></a>
+          <div class="social-links">
+            <a href="https://github.com/arathyrajeesh" target="_blank" class="glass social-icon"><i data-lucide="github"></i></a>
+            <a href="https://www.linkedin.com/in/arathyrajeesh" target="_blank" class="glass social-icon"><i data-lucide="linkedin"></i></a>
+            <a href="#" class="glass social-icon"><i data-lucide="twitter"></i></a>
+            <a href="mailto:arathyrajeesh2@gmail.com" class="glass social-icon"><i data-lucide="mail"></i></a>
           </div>
         </div>
-        <div style="border-top: 1px solid var(--glass-border); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; color: var(--text-secondary); font-size: 0.9rem; flex-wrap: wrap; gap: 1rem;">
-          <p>&copy; 2026 Arathy TP</p>
-          <div style="display: flex; gap: 2rem;">
-            <a href="#" style="color: inherit; text-decoration: none;">Privacy Policy</a>
-            <a href="#" style="color: inherit; text-decoration: none;">Terms of Service</a>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Arathy TP. All rights reserved.</p>
+          <div class="footer-links">
+            <a href="#" class="footer-link">Privacy Policy</a>
+            <a href="#" class="footer-link">Terms of Service</a>
           </div>
         </div>
       </div>
