@@ -52,7 +52,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Elements to animate
-document.querySelectorAll('section, .project-card, .training-card, .glass, .hero-content').forEach(el => {
+document.querySelectorAll('section, .project-card, .timeline-item, .training-card, .glass, .hero-content').forEach(el => {
   if (!el.classList.contains('hero-content')) {
     el.classList.add('reveal');
   }
