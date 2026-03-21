@@ -127,30 +127,13 @@ const statsObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 stats.forEach(stat => statsObserver.observe(stat));
-
 const contactForm = document.querySelector('.contact-form');
+
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+  contactForm.addEventListener('submit', () => {
     const btn = contactForm.querySelector('button');
-    const originalText = btn.innerHTML;
-    
     btn.innerHTML = 'Sending...';
     btn.disabled = true;
-
-    setTimeout(() => {
-      btn.innerHTML = 'Message Sent! <i data-lucide="check"></i>';
-      btn.style.background = '#22c55e';
-      if (typeof lucide !== 'undefined') lucide.createIcons();
-      contactForm.reset();
-      
-      setTimeout(() => {
-        btn.innerHTML = originalText;
-        btn.style.background = '';
-        btn.disabled = false;
-        if (typeof lucide !== 'undefined') lucide.createIcons();
-      }, 3000);
-    }, 1500);
   });
 }
 
