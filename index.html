@@ -19,24 +19,57 @@
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <a href="#contact" class="btn btn-secondary">Hire Me</a>
+        <div class="nav-actions">
+          <a href="#contact" class="btn btn-secondary hire-btn">Hire Me</a>
+          <button class="menu-toggle" aria-label="Toggle Menu">
+            <i data-lucide="menu"></i>
+          </button>
+        </div>
       </div>
     </nav>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav-overlay">
+      <div class="overlay-content">
+        <button class="close-menu"><i data-lucide="x"></i></button>
+        <ul class="mobile-nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
 
     <!-- Hero Section -->
     <header class="hero" id="home">
       <div class="container">
-        <div class="hero-content animate-up">
-          <span class="hero-badge">Available for Projects</span>
-          <h1>Hi, I'm <span class="highlight">Arathy TP</span></h1>
-          <h2 id="typing-text">Python Full Stack Developer | Trainer</h2>
-          <p>Building scalable backend systems with Python and creating seamless full-stack experiences. Passionate about coding and mentoring the next generation of developers.</p>
-          <div class="hero-btns">
+        <div class="hero-content">
+          <span class="hero-badge reveal-stagger">Available for Projects</span>
+          <h1 class="reveal-stagger">Hi, I'm <span class="highlight">Arathy TP</span></h1>
+          <h2 id="typing-text" class="reveal-stagger">Python Full Stack Developer | Trainer</h2>
+          <p class="reveal-stagger">Building scalable backend systems with Python and creating seamless full-stack experiences. Passionate about coding and mentoring the next generation of developers.</p>
+          <div class="hero-btns reveal-stagger">
             <a href="#projects" class="btn btn-primary">View Projects <i data-lucide="arrow-right"></i></a>
             <a href="#contact" class="btn btn-secondary">Contact Me</a>
-            <a href="/assets/resume.pdf" download class="btn btn-secondary">
+            <a href="/assets/Arathy.pdf" download class="btn btn-secondary">
               <i data-lucide="download"></i> Resume
             </a>
+          </div>
+          <div class="hero-stats reveal-stagger">
+            <div class="stat-item">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Students Trained</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">10+</span>
+              <span class="stat-label">Projects Delivered</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">2+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
           </div>
         </div>
       </div>
@@ -110,10 +143,10 @@
       <div class="container">
         <h2 class="section-title">Featured Project</h2>
 
-        <div class="glass" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding: 3rem; align-items: center;">
+        <div class="glass featured-container">
           
           <!-- Project Image -->
-          <div class="project-preview" id="img-featured" style="background: #1a1a1e; border-radius: 12px; aspect-ratio: 4/3; position: relative; overflow: hidden;">
+          <div class="project-preview" id="img-featured">
             <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" 
                 alt="Laundry Shop Project" 
                 style="width: 100%; height: 100%; object-fit: cover;">
@@ -328,7 +361,7 @@
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; flex-wrap: wrap; gap: 2rem;">
           <a href="#" class="logo">ARATHY.TP</a>
           <div class="social-links" style="display: flex; gap: 1.5rem;">
-            <a href="https://github.com/arathyrajeesh"class="glass" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: var(--accent-primary); text-decoration: none; transition: var(--transition-smooth);"><i data-lucide="github"></i></a>
+            <a href="https://github.com/arathyrajeesh" class="glass" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: var(--accent-primary); text-decoration: none; transition: var(--transition-smooth);"><i data-lucide="github"></i></a>
             <a href="https://www.linkedin.com/in/arathyrajeesh" class="glass" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: var(--accent-primary); text-decoration: none; transition: var(--transition-smooth);"><i data-lucide="linkedin"></i></a>
             <a href="#" class="glass" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: var(--accent-primary); text-decoration: none; transition: var(--transition-smooth);"><i data-lucide="twitter"></i></a>
             <a href="#" class="glass" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: var(--accent-primary); text-decoration: none; transition: var(--transition-smooth);"><i data-lucide="mail"></i></a>
@@ -343,6 +376,11 @@
         </div>
       </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="glass" title="Back to Top">
+      <i data-lucide="arrow-up"></i>
+    </button>
 
     <script type="module" src="/src/main.js"></script>
     <script>

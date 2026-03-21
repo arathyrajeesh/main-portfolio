@@ -20,6 +20,12 @@
                    radial-gradient(at 100% 100%, hsla(253,16%,7%,1) 0, transparent 50%);
 }
 
+@keyframes mesh-animation {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -140,6 +146,26 @@ nav .container {
   align-items: center;
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: var(--transition-smooth);
+}
+
+.menu-toggle:hover {
+  color: var(--accent-primary);
+}
+
 .logo {
   font-size: 1.5rem;
   font-weight: 800;
@@ -167,6 +193,61 @@ nav .container {
   color: var(--text-primary);
 }
 
+/* Mobile Nav Overlay */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-darker);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-smooth);
+}
+
+.nav-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.overlay-content {
+  text-align: center;
+}
+
+.close-menu {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mobile-nav-links a {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  font-family: 'Outfit', sans-serif;
+}
+
+.mobile-nav-links a:hover {
+  color: var(--accent-primary);
+  transform: scale(1.1);
+}
+
 /* Hero Section */
 .hero {
   min-height: 100vh;
@@ -175,6 +256,8 @@ nav .container {
   position: relative;
   padding-top: 100px;
   background: var(--mesh-gradient);
+  background-size: 200% 200%;
+  animation: mesh-animation 20s ease infinite;
   background-attachment: fixed;
   overflow: hidden;
 }
@@ -596,16 +679,60 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Responsive */
+/* Featured Project */
+.featured-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 3rem;
+  align-items: center;
+}
+
+#img-featured {
+  background: #1a1a1e;
+  border-radius: 12px;
+  aspect-ratio: 4/3;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Responsive Overrides */
+@media (max-width: 992px) {
+  .featured-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 3rem;
   }
   
-  .nav-links {
+  .nav-links, .hire-btn {
     display: none;
   }
+
+  .menu-toggle {
+    display: block;
+  }
   
+  .hero-btns {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero-stats {
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    margin-top: 3rem;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
   section {
     padding: 5rem 0;
   }
@@ -615,9 +742,73 @@ footer {
   }
 }
 
-.social-links a:hover {
-  background: var(--accent-primary) !important;
-  color: white !important;
+/* Back to Top */
+#back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-smooth);
+  color: var(--accent-primary);
+  border: 1px solid var(--glass-border);
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+#back-to-top:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent-primary);
+  box-shadow: 0 5px 15px rgba(139, 92, 246, 0.2);
+}
+
+/* Animations Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.reveal-stagger.active {
+  animation: fadeSlideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-stats {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 }

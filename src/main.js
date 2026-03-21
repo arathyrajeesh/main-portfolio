@@ -29,22 +29,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Intersection Observer for Scroll Animations
 const observerOptions = {
-  threshold: 0.1,
+  threshold: 0.15,
   rootMargin: '0px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('animate-up');
+      if (entry.target.classList.contains('hero-content')) {
+        // Higher-level stagger for hero
+        const children = entry.target.querySelectorAll('.reveal-stagger');
+        children.forEach((child, index) => {
+          child.style.animationDelay = `${index * 0.1}s`;
+          child.classList.add('active');
+        });
+      } else {
+        entry.target.classList.add('active');
+      }
       observer.unobserve(entry.target);
     }
   });
 }, observerOptions);
 
 // Elements to animate
-document.querySelectorAll('section, .skill-card, .project-card, .glass').forEach(el => {
-  el.style.opacity = '0';
+document.querySelectorAll('section, .project-card, .training-card, .glass, .hero-content').forEach(el => {
+  if (!el.classList.contains('hero-content')) {
+    el.classList.add('reveal');
+  }
   observer.observe(el);
 });
 
@@ -117,7 +128,6 @@ const statsObserver = new IntersectionObserver((entries) => {
 
 stats.forEach(stat => statsObserver.observe(stat));
 
-// Form Submission (Simulated)
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
@@ -143,3 +153,50 @@ if (contactForm) {
     }, 1500);
   });
 }
+
+// Back to Top Button Logic
+const backToTopBtn = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 500) {
+    backToTopBtn.classList.add('visible');
+  } else {
+    backToTopBtn.classList.remove('visible');
+  }
+});
+
+if (backToTopBtn) {
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
+// Mobile Menu Logic
+const menuToggle = document.querySelector('.menu-toggle');
+const closeMenu = document.querySelector('.close-menu');
+const navOverlay = document.querySelector('.nav-overlay');
+const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+
+if (menuToggle && navOverlay) {
+  menuToggle.addEventListener('click', () => {
+    navOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent scroll
+  });
+}
+
+if (closeMenu && navOverlay) {
+  closeMenu.addEventListener('click', () => {
+    navOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+}
+
+mobileLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    navOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+});
